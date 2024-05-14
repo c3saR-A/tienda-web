@@ -5,11 +5,12 @@
 }
 
 .nav {
-    background-color: rgb(109, 109, 255);
+    background-color: #222831;
     height: 3.5rem;
     width: 100%;
     display: flex;
     align-items: center;
+    color: #EEEEEE;
 }
 
 .Nombre {
@@ -21,43 +22,81 @@
     font-size: 150%;
 }
 
-.Menu {
+.fa-bars{
     margin-left: auto;
-    margin-right: 10rem;
-}
-
-.Menu-icon,
-
-.Cart-icon {
-    width: 30px;
-    height: 30px;
+    margin-right: 10rem; 
 }
 
 .Número {
     height: 1.8rem;
     width: 1.8rem;
-    border: 1.8px solid black;
+    border: 1.8px solid #EEEEEE;
     border-radius: 50%;
     box-sizing: border-box;
     text-align: center;
     font-size: 20px;
 }
 
-.Main-content {
+.Main-content{
     min-height: calc(100vh - 6.5rem);
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    background-color: #EEEEEE;
 }
 
-.Product-article {
-    width: calc(50% - 1rem);
-    margin-bottom: 1rem;
+#Carrusel{
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
 }
+
+.Conten-carrusel{
+    height: 100%;
+    position: relative;
+}
+
+.Item-carrusel {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.Flechas-carrusel{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;  
+}
+
+#item-1{
+    background-color: #393e46;
+}
+
+#item-2{
+    background-color: #393e46;
+}
+
+#item-3{
+    background-color: #393e46;
+}
+
+.Imagen-carrusel{
+    height: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
 
 .Footer {
-    background-color: rgb(109, 109, 255);
+    background-color: #222831;
     height: 3rem;
     text-align: center;
     line-height: 2.5rem;
+    color: #EEEEEE;
 }
