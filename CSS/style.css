@@ -40,6 +40,7 @@
 .Main-content{
     min-height: calc(100vh - 6.5rem);
     display: flex;
+    flex-direction: column;
     background-color: #EEEEEE;
 }
 
@@ -52,6 +53,7 @@
 .Conten-carrusel{
     height: 100%;
     position: relative;
+    
 }
 
 .Item-carrusel {
@@ -59,6 +61,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    background-color: #393e46;
 }
 
 .Flechas-carrusel{
@@ -72,20 +75,45 @@
     padding: 30px;  
 }
 
-#item-1{
-    background-color: #393e46;
-}
-
-#item-2{
-    background-color: #393e46;
-}
-
-#item-3{
-    background-color: #393e46;
-}
-
 .Imagen-carrusel{
     height: 100%;
+}
+
+.Productos-sección{
+    height: 23.3rem;
+    width: 100%;
+    display: flex;
+    border: 2px solid #ff0000;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.Productos{
+    height: 80%;
+    width: 100%;
+    display: flex;
+    border: 2px solid rgba(0, 0, 0, 0.733);
+    justify-content: space-evenly;
+}
+
+.Producto{
+    border: 1px solid blue;
+    height: 90%;
+    width: 15%;
+}
+
+.Botones-producto{
+    display: flex;
+    border: 1px solid #074111;
+    height: 20%;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.Botones{
+    border: 1px solid blue;
+    height: 60%;
+    width: 15%;
 }
 
 a{
