@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body{
+    font-family: 'Lato';
+}
+
 .nav {
     background-color: #222831;
     height: 3.5rem;
@@ -45,7 +49,7 @@
 }
 
 #Carrusel{
-    height: 250px;
+    height: 225px;
     width: 100%;
     overflow: hidden;
 }
@@ -53,7 +57,6 @@
 .Conten-carrusel{
     height: 100%;
     position: relative;
-    
 }
 
 .Item-carrusel {
@@ -80,40 +83,62 @@
 }
 
 .Productos-sección{
-    height: 23.3rem;
+    height: 25rem;
     width: 100%;
     display: flex;
-    border: 2px solid #ff0000;
-    padding: 10px;
+    padding: 1px;
     flex-wrap: wrap;
 }
 
 .Productos{
-    height: 80%;
+    height: 90%;
     width: 100%;
     display: flex;
-    border: 2px solid rgba(0, 0, 0, 0.733);
     justify-content: space-evenly;
 }
 
 .Producto{
-    border: 1px solid blue;
-    height: 90%;
-    width: 15%;
+    height: 100%;
+    width: 17%;
+    border-radius: 10px;
+    transition: box-shadow 0.9s;
+}
+
+.Producto:hover{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.30);
+}
+
+.Info-producto{
+    padding: 1px 5px;
+}
+
+.Imagen-producto{
+    height: 80%;
+    width: 100%;
 }
 
 .Botones-producto{
     display: flex;
-    border: 1px solid #074111;
-    height: 20%;
+    height: 10%;
     width: 100%;
     justify-content: space-evenly;
 }
 
 .Botones{
-    border: 1px solid blue;
-    height: 60%;
-    width: 15%;
+    height: 90%;
+    width: 17%;
+    background-color: #393e46;
+    color: #EEEEEE;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    text-align: center;
+    transition: background-color 0.9s;
+}
+
+.Botones:hover{
+    background-color: #FD7014;
 }
 
 a{
