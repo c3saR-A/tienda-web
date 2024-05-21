@@ -1,3 +1,15 @@
+<?php
+
+require "../config/database.php";
+$db = new Database();
+$conect = $db->conectar();
+
+$sql = $conect->prepare("SELECT id, nombre, precio FROM productos WHERE activo=1");
+$sql->execute();
+$resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,40 +80,27 @@
     </section>
     <section class="Productos-sección">
         <div class="Productos">
-            <article class="Producto">
-                <img src="../IMG-ICON/AUDIFONO REDRAGON HYLAS BLANCO.png" alt="AUDIFONO REDRAGON HYLAS BLANCO" class="Imagen-producto">
-                <article class="Info-producto"> 
-                    <h4>Audifono Redragon Hylas Blanco</h4>
-                    <p>$100</p>
+            <?php foreach ($resultado as $row) { ?>
+                <article class="Producto">
+                <?php
+                    $id = $row["id"];
+                    $imagen = "../IMG-ICON/" . $id . "/imagen.png";
+                    if (!file_exists($imagen)) {
+                        $imagen = "../IMG-ICON/no_photo.png";
+                    }
+                    ?>
+                    <img src="<?php echo $imagen; ?>" class="Imagen-producto">
+                    <article class="Info-producto">
+                        <h4><?php echo $row["nombre"]; ?></h4>
+                        <p>$ <?php echo number_format($row["precio"], 2, ".", ","); ?></p>
+                    </article>
                 </article>
-            </article>
-            <article class="Producto">
-                <img src="../IMG-ICON/AURICULARES PRIMUS GAMING.png" alt="AURICULARES PRIMUS GAMING" class="Imagen-producto">
-                <article class="Info-producto"> 
-                    <h4>Auricales Primus Gaming</h4>
-                    <p>$95</p>
-                </article>
-            </article>
-            <article class="Producto">
-                <img src="../IMG-ICON/AURICULARES PRIMUS GAMING BLANCO.png" alt="AURICULARES PRIMUS GAMING BLANCO" class="Imagen-producto">
-                <article class="Info-producto"> 
-                    <h4>Auricales Primus Gaming Blanco</h4>
-                    <p>$100</p>
-                </article>
-            </article>
-            <article class="Producto">
-                <img src="../IMG-ICON/AURICULARES PRIMUS PSH-S101ML.png" alt="AURICULARES PRIMUS PSH-S101ML" class="Imagen-producto">
-                <article class="Info-producto"> 
-                    <h4>Auriculares Primus PSH-S101ML</h4>
-                    <p>$80</p>
-                </article>
-            </article>
+            <?php } ?>
         </div>
-        <div class="Botones-producto"">
-        <button class="Botones">Agregar compra</button>
-        <button class="Botones">Agregar compra</button>
-        <button class="Botones">Agregar compra</button>
-        <button class="Botones">Agregar compra</button>
+        <div class="Botones-producto">
+            <?php foreach ($resultado as $row) { ?>
+                <button class="Botones">Agregar compra</button>
+            <?php } ?>
         </div>
     </section>
 </main>
